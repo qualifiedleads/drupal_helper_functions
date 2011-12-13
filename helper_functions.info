@@ -1,0 +1,6 @@
+name = Helper functions
+description = Provides custom functionality for this site
+core = 6.x
+ 
+project = "helper_functions"
+package = Other

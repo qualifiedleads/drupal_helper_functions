@@ -1,0 +1,211 @@
+<?php
+// $Id$
+ 
+
+function article_sideblock(){
+	
+	
+	
+	$url = $_REQUEST['q'];
+	$return = "";
+	
+	//hebrew check
+	$hebrew = substr($url, 0, 3);
+	if($hebrew == "en	$url = substr($url, 3);
+		}
+		
+	
+	//print "URL:   " . substr($url, 3);
+	
+	$query="SELECT src FROM url_alias WHERE dst='$url'";
+	
+	$res=db_query($query);
+	
+		while ($record=db_fetch_array($res))
+		{
+			$temp_url=$record[src];
+		}
+	
+	
+	$temp= explode('/', $temp_url);
+	$nid = $temp[1];
+		
+	//print "system NID:   " . $nid;
+	
+	$node = node_load($nid);
+	
+	if($node->field_b1_text[0]['value'] != ''){
+		$return .= "<div class='article-block-1'>";
+		$return .= $node->field_b1_image[0]['view'];
+		$return .= theme('imagecache', 'article_block',$node->field_b1_image[0]['filepath']);
+		$return .= "<div class='block-text'>".$node->field_b1_text[0]['value']."</div>";
+		$return .= "<a href='".$node->field_b1_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+		}
+		
+	
+	if($node->field_b2_text[0]['value'] != ''){
+		$return .= "<div class='article-block-2'>";
+		$return .= $node->field_b2_image[0]['view'];
+		$return .= theme('imagecache', 'article_block',$node->field_b2_image[0]['filepath']);
+		$return .= "<div class='block-text'>".$node->field_b2_text[0]['value']."</div>";
+		$return .= "<a href='".$node->field_b2_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+	}
+	
+	
+	if($node->field_b3_text[0]['value'] != ''){
+		$return .= "<div class='article-block-3'>";
+		$return .= $node->field_b3_image[0]['view'];
+		$return .= theme('imagecache', 'article_block',$node->field_b3_image[0]['filepath']);
+		$return .= "<div class='block-text'>".$node->field_b3_text[0]['value']."</div>";
+		$return .= "<a href='".$node->field_b3_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+	}
+	
+	if($node->field_b4_text[0]['value'] != ''){
+		$return .= "<div class='article-block-4'>";
+		$return .= $node->field_b4_image[0]['view'];
+		$return .= theme('imagecache', 'article_block',$node->field_b4_image[0]['filepath']);
+		$return .= "<div class='block-text'>".$node->field_b4_text[0]['value']."</div>";
+		$return .= "<a href='".$node->field_b4_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+		}
+		
+	
+	if($node->field_b5_text[0]['value'] != ''){
+		$return .= "<div class='article-block-5'>";
+		$return .= $node->field_b5_image[0]['view'];
+		$return .= theme('imagecache', 'article_block',$node->field_b5_image[0]['filepath']);
+		$return .= "<div class='block-text'>".$node->field_b5_text[0]['value']."</div>";
+		$return .= "<a href='".$node->field_b5_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+	}
+	
+	
+	if($node->field_b6_text[0]['value'] != ''){
+		$return .= "<div class='article-block-6'>";
+		$return .= $node->field_b6_image[0]['view'];
+		$return .= theme('imagecache', 'article_block',$node->field_b6_image[0]['filepath']);
+		$return .= "<div class='block-text'>".$node->field_b6_text[0]['value']."</div>";
+		$return .= "<a href='".$node->field_b6_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+	}
+
+
+//print("<pre>".print_r($node ,true)."</pre>");
+	//$return .= $node->field_b5_text[0]['value'];
+	
+	return $return;
+	}
+ 
+ 
+ 
+ 
+ 
+ function page_teacher_sideblock(){
+	
+	
+	
+	$url = $_REQUEST['q'];
+	$return = "";
+	
+	//hebrew check
+	$hebrew = substr($url, 0, 3);
+	if($hebrew == "he/"){
+		$url = substr($url, 3);
+		}
+	
+	$query="SELECT src FROM url_alias WHERE dst='$url'";
+	
+	$res=db_query($query);
+	
+		while ($record=db_fetch_array($res))
+		{
+			$temp_url=$record[src];
+		}
+	
+	
+	$temp= explode('/', $temp_url);
+	$nid = $temp[1];
+		
+	//print "URL:   " . $url;
+	if($url == "" ){
+		$nid = 10;
+		}
+	if($url == "he" ){
+		$nid = 55;
+		}
+	
+	$node = node_load($nid);
+	
+	//$return .= "IT WORKS!";
+	//$return .= $nid;
+	
+	if($node->field_note1[0]['value'] != ''){
+		$return .= "<div class='white-note'>";
+		//$return .= $node->field_b1_image[0]['view'];
+		//$return .= theme('imagecache', 'article_block',$node->field_b1_image[0]['filepath']);
+		$return .= "<div class='content'>".$node->field_note1[0]['value']."</div>";
+		//$return .= "<a href='".$node->field_b1_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+		}
+		
+	
+	if($node->field_videoblock[0]['value'] != ''){
+		$return .= "<div class='video-sidbar'>";
+		//$return .= $node->field_b2_image[0]['view'];
+		//$return .= theme('imagecache', 'article_block',$node->field_b2_image[0]['filepath']);
+		$config='sidebar' ;
+        $flashVars=array( 'file' => $node->field_videoblock[0]['value'],
+						  'image' => $node->field_videopreview[0]['value']);
+		
+		
+		$return .= "<div class='content'>". theme('jwplayermodule_render_player', $config, $flashVars)."</div>";
+		//$return .= "<a href='".$node->field_b2_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+	}
+	
+	
+	if($node->field_note2[0]['value'] != ''){
+		$return .= "<div class='yellow-note'>";
+		//$return .= $node->field_b3_image[0]['view'];
+		//$return .= theme('imagecache', 'article_block',$node->field_b3_image[0]['filepath']);
+		$return .= "<div class='content'>".$node->field_note2[0]['value']."</div>";
+		//$return .= "<a href='".$node->field_b3_link[0]['value']."'>".t('For details')."</a>";
+		$return .= "</div>";
+	}
+	//$return .=  "<pre>".print_r($node ,true)."</pre>";
+return $return;
+ }
+ 
+/**
+ * Implementation of hook_form_alter().
+ */
+/*
+function mysite_form_alter(&$form, &$form_state, $form_id) {
+  // print $form_id;
+  switch ($form_id) {
+    case 'blog_node_form':
+      // remove some unwanted node editing fields
+      $form['revision_information']['#access'] = 0;
+      $form['menu']['#access'] = 0;
+      $form['author']['#access'] = 0;
+      // override node options permissions defined by 'administer nodes'
+      $form['options']['#access'] = 1;
+      $form['options']['status']['#access'] = 1;
+      $form['options']['promote']['#access'] = 0;
+      $form['options']['sticky']['#access'] = 0;
+    break;
+    case 'page_node_form':
+      // don't ever allow page nodes to be promoted or sticky
+      $form['options']['promote']['#access'] = 0;
+      $form['options']['sticky']['#access'] = 0;
+    break;
+  }
+
+}
+
+*/
+
+?>
