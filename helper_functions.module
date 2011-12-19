@@ -96,7 +96,6 @@ function page_teacher_sideblock(){
   $query = "SELECT src FROM {url_alias} WHERE dst = '%s'";
   $res = db_query($query, $url);
   while ($record = db_fetch_array($res)) {
-    dpm($temp_url);
     $temp_url = $record[src];
   }
 
