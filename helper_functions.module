@@ -9,7 +9,7 @@ function article_sideblock() {
 
   //hebrew check
   $hebrew = substr($url, 0, 3);
-  if($hebrew == "en/"){
+  if ($hebrew == "en/") {
     $url = substr($url, 3);
   }
 
@@ -26,7 +26,7 @@ function article_sideblock() {
 
   //print "system NID:   " . $nid;
   $node = node_load($nid);
-  if($node->field_b1_text[0]['value'] != ''){
+  if ($node->field_b1_text[0]['value'] != '') {
     $output .= '<div class="article-block-1">';
     $output .= $node->field_b1_image[0]['view'];
     $output .= theme('imagecache', 'article_block', $node->field_b1_image[0]['filepath']);
@@ -35,7 +35,7 @@ function article_sideblock() {
     $output .= '</div>';
   }
 
-  if($node->field_b2_text[0]['value'] != ''){
+  if ($node->field_b2_text[0]['value'] != '') {
     $output .= '<div class="article-block-2">';
     $output .= $node->field_b2_image[0]['view'];
     $output .= theme('imagecache', 'article_block',$node->field_b2_image[0]['filepath']);
@@ -44,7 +44,7 @@ function article_sideblock() {
     $output .= '</div>';
   }
 
-  if($node->field_b3_text[0]['value'] != ''){
+  if ($node->field_b3_text[0]['value'] != '') {
     $output .= '<div class="article-block-3">';
     $output .= $node->field_b3_image[0]['view'];
     $output .= theme('imagecache', 'article_block', $node->field_b3_image[0]['filepath']);
@@ -53,7 +53,7 @@ function article_sideblock() {
     $output .= '</div>';
   }
 
-  if($node->field_b4_text[0]['value'] != ''){
+  if ($node->field_b4_text[0]['value'] != '') {
     $output .= '<div class="article-block-4">';
     $output .= $node->field_b4_image[0]['view'];
     $output .= theme('imagecache', 'article_block', $node->field_b4_image[0]['filepath']);
@@ -62,7 +62,7 @@ function article_sideblock() {
     $output .= '</div>';
   }
 
-  if($node->field_b5_text[0]['value'] != ''){
+  if ($node->field_b5_text[0]['value'] != '') {
     $output .= '<div class="article-block-5">';
     $output .= $node->field_b5_image[0]['view'];
     $output .= theme('imagecache', 'article_block', $node->field_b5_image[0]['filepath']);
@@ -71,7 +71,7 @@ function article_sideblock() {
     $output .= '</div>';
   }
 
-  if($node->field_b6_text[0]['value'] != ''){
+  if ($node->field_b6_text[0]['value'] != '') {
     $output .= '<div class="article-block-6">';
     $output .= $node->field_b6_image[0]['view'];
     $output .= theme('imagecache', 'article_block', $node->field_b6_image[0]['filepath']);
@@ -103,11 +103,11 @@ function page_teacher_sideblock() {
   $nid = $temp[1];
 
   //print "URL:   " . $url;
-  if ($url == ""){
+  if ($url == "") {
     $nid = 55;
   }
 
-  if ($url == "en"){
+  if ($url == "en") {
     $nid = 10;
   }
 
@@ -143,15 +143,569 @@ function page_teacher_sideblock() {
 
   if ($node->field_note2[0]['value'] != '') {
     $output .= '<div class="yellow-note">';
-    //$output .= $node->field_b3_image[0]['view'];
-    //$output .= theme('imagecache', 'article_block',$node->field_b3_image[0]['filepath']);
+    // $output .= $node->field_b3_image[0]['view'];
+    // $output .= theme('imagecache', 'article_block', $node->field_b3_image[0]['filepath']);
     $output .= '<div class="content">' . $node->field_note2[0]['value'] . '</div>';
-    //$output .= '<a href="' . $node->field_b3_link[0]['value'] . '">' . t('For details') . '</a>';
+    // $output .= '<a href="' . $node->field_b3_link[0]['value'] . '">' . t('For details') . '</a>';
     $output .= '</div>';
   }
 
   //$output .=  "<pre>".print_r($node ,true)."</pre>";
   return $output;
+}
+
+function ca_interspire_sideblock_en() {
+  $content = <<<EOT
+<style type="text/css">
+#block-webform-client-block-6 {
+  visibility:hidden;
+}
+
+.myForm td, input, select, textarea, checkbox  {
+  font-family: tahoma;
+  font-size: 12px;
+}
+
+.required {
+  color: black;
+}
+</style>
+<div class="block block-webform" id="block-webform-client-block-interspire">
+    <h2 class="block-title">Course signup</h2>
+    <div class="content">
+    <form class="webform-client-form compact-form" action="http://news.concept-academy.co.il/form.php?form=24" id="frmSS24" method="post" onsubmit="return CheckForm24(this);"><input name="format" type="hidden" value="h">
+        <div>
+            <div id="webform-component-name" class="webform-component webform-component-textfield">
+                <div id="edit-submitted-name-wrapper" class="form-item compact-form-wrapper">
+                    <label class="compact-form-label" for="CustomFields_2_24">Name <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required compact-form-field" id="CustomFields_2_24" name="CustomFields[2]" size="20" type="text" value="" onclick="setGFields(document.forms[0]);">
+                </div>
+            </div>
+            <div id="webform-component-email" class="webform-component webform-component-email">
+                <div id="edit-submitted-email-wrapper" class="form-item compact-form-wrapper">
+                    <label class="compact-form-label" for="email">Email <span class="form-required" title="This field is required.">*</span></label><input class="form-text required compact-form-field" name="email" id="email" type="text" value="">
+                </div>
+            </div>
+            <div id="webform-component-phone" class="webform-component webform-component-textfield">
+                <div id="edit-submitted-phone-wrapper" class="form-item compact-form-wrapper">
+                    <label class="compact-form-label" for="CustomFields_5_24">Phone <span class="form-required" title="This field is required.">*</span></label><input class="form-text required compact-form-field" id="CustomFields_5_24" name="CustomFields[5]" size="20" type="text" value="">
+                </div>
+            </div>
+            <div id="webform-component-course" class="webform-component webform-component-select">
+                <div id="edit-submitted-course-wrapper" class="form-item">
+                    <label for="CustomFields_13_24">Course: <span class="form-required" title="This field is required.">*</span></label>
+                    <select name="CustomFields[13]" class="form-select required" id="CustomFields_13_24"><option value="" selected="selected">select...</option><option value="graphic_design">Graphic design</option><option value="hair_dressing">Hair dressing</option><option value="makeup">Makeup</option><option value="photography">Photography</option><option value="interior_design">Interior Design</option></select>
+                </div>
+            </div>
+                <div><!-- sourceURL:  -->
+                    <input id="CustomFields_26_24" name="CustomFields[26]" type="hidden" value="">
+                </div>
+                <div><!-- source: -->
+                    <input id="CustomFields_19_24" name="CustomFields[19]" type="hidden" value="">
+                </div>
+             <div><!-- term: -->
+                    <input id="CustomFields_21_24" name="CustomFields[21]" type="hidden" value="">
+                </div>
+             <div><!-- content: -->
+                    <input id="CustomFields_22_24" name="CustomFields[22]" type="hidden" value="">
+                </div>
+             <div><!-- campaign: -->
+                    <input id="CustomFields_23_24" name="CustomFields[23]" type="hidden" value="">
+                </div>
+             <div><!-- csegment: -->
+                    <input id="CustomFields_24_24" name="CustomFields[24]" type="hidden" value="">
+                </div>
+             <div><!-- nvisits: -->
+                    <input id="CustomFields_25_24" name="CustomFields[25]" type="hidden" value="">
+                </div>
+                <div class="form-item" id="edit-submitted-terms-1-wrapper">
+                    <label class="option" for="edit-submitted-terms-1"><input type="checkbox" name="submitted[terms][accept]" id="edit-submitted-terms-1" value="accept" checked="checked" class="form-checkbox"> I agree to the <a href="/terms-and-conditions">Terms and conditions</a></label>
+                </div>
+                <div id="edit-actions" class="form-actions form-wrapper">
+                    <input id="edit-submit" class="form-submit" type="submit" value="Send it"><br>
+                </div>
+            </div>
+    </form>
+</div>
+</div>
+<script type="text/javascript">
+// <![CDATA[
+$(document).ready(function() {
+  // put all your jQuery goodness in here.
+  setGFields(0);
+});
+
+function CheckMultiple24(frm, name) {
+  for (var i=0; i<frm.length; i++) {
+    fldObj = frm.elements[i];
+    fldId = fldObj.id;
+    if (fldId) {
+      var fieldnamecheck=fldObj.id.indexOf(name);
+      if (fieldnamecheck != -1) {
+        if (fldObj.checked) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function CheckForm24(f) {
+  setGFields(document.forms[0]);
+  var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+  if (!email_re.test(f.email.value)) {
+    alert("Please enter your email address.");
+    f.email.focus();
+    return false;
+  }
+
+  var fname = "CustomFields_2_24";
+  var fld = document.getElementById(fname);
+  if (fld.value == "") {
+    alert("Please enter a value for field First Name");
+    fld.focus();
+    return false;
+  }
+
+  var fname = "CustomFields_18_24";
+  var fld = document.getElementById(fname);
+
+  if (fld.value == "") {
+    alert("Please enter a value for field Mobile phone");
+    fld.focus();
+    return false;
+  }
+
+  CheckNum = parseInt(fld.value);
+  if (fld.value != "" && isNaN(CheckNum)) {
+    alert("Please enter a numeric value for field Mobile phone");
+    fld.select();
+    fld.focus();
+    return false;
+  }
+
+  var fname = "CustomFields_13_24";
+  var fld = document.getElementById(fname);
+  if (fld.value == "") {
+    alert("Please enter a value for field Subject / Area of Interest");
+    fld.focus();
+    return false;
+  }
+
+  return true;
+}
+// ]]>
+</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+   try {
+    var pageTracker = _gat._createTracker("UA-6240543-1");
+    pageTracker._trackPageview();
+
+   function init_google() {
+        var pattern = /google\./i;
+        if (pattern.exec(document.referrer) != null) {
+            var url_parts = document.referrer.split('?');
+            if (url_parts[1]) {
+                var url_args = url_parts[1].split('&');
+                for (var i=0; i<url_args.length; i++) {
+                    var keyval = url_args[i].split('=');
+                    if (keyval[0] == 'q') {
+                        return _utf8_decode(decode_url(keyval[1])); //decode_url(keyval[1]);
+                    }
+                }
+            }
+        }
+    }
+
+    // private method for UTF-8 decoding
+    function _utf8_decode(utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+        while (i<utftext.length) {
+            c = utftext.charCodeAt(i);
+
+            if (c<128) {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if ((c>191) && (c<224)) {
+                c2 = utftext.charCodeAt(i+1);
+                string += String.fromCharCode(((c & 31)<<6) | (c2 & 63));
+                i += 2;
+            }
+            else {
+                c2 = utftext.charCodeAt(i+1);
+                c3 = utftext.charCodeAt(i+2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+        }
+        return string;
+    }
+
+    function decode_url(url) {
+        return unescape(url.replace(/\+/g,' '));
+    }
+
+    function go_google(terms) {
+        terms = terms.replace(/\"/g,"");
+        return terms;
+    }
+
+   function _uGC(l,n,s) {
+    if (!l || l=="" || !n || n=="" || !s || s=="") return "-";
+    var i,i2,i3,c="-";
+    i=l.indexOf(n);
+    i3=n.indexOf("=")+1;
+    if (i > -1) {
+     i2=l.indexOf(s,i); if (i2 < 0) { i2=l.length; }
+     c=l.substring((i+i3),i2);
+    }
+    return c;
+   }
+
+   //
+   var z = _uGC(document.cookie, '__utmz=', ';');
+   //
+   var source  = _uGC(z, 'utmcsr=', '|');
+   var medium  = _uGC(z, 'utmcmd=', '|');
+   var term    = _uGC(z, 'utmctr=', '|');
+   var content = _uGC(z, 'utmcct=', '|');
+   var campaign = _uGC(z, 'utmccn=', '|');
+   var gclid   = _uGC(z, 'utmgclid=', '|');
+   //
+   if (gclid !="-") {
+      source = 'google';
+      medium = 'cpc';
+   }
+
+   var csegment = _uGC(document.cookie, '__utmv=', ';');
+   if (csegment != '-') {
+      var csegmentex = /[1-9]*?\.(.*)/;
+      csegment    = csegment.match(csegmentex);
+      csegment    = csegment[1];
+   } else {
+      csegment = '(not set)';
+   }
+
+   //
+   var a = _uGC(document.cookie, '__utma=', ';');
+   var aParts = a.split(".");
+   var nVisits = aParts[5];
+
+   function setGFields(f) {
+      //alert('yey');
+      term = term.replace(/%20/g, ' ');
+      try {
+          document.getElementById('CustomFields_19_24').value  = source;
+          document.getElementById('CustomFields_26_24').value  = document.URL;
+          document.getElementById('CustomFields_21_24').value    = term + ' | ' + init_google() + '>>' + _utf8_decode(decode_url(term));
+          document.getElementById('CustomFields_22_24').value = content;
+          document.getElementById('CustomFields_23_24').value = campaign;
+          document.getElementById('CustomFields_24_24').value = csegment;
+          document.getElementById('CustomFields_25_24').value = nVisits;
+      }
+      catch(err) { }
+
+      return true;
+   }
+
+  } catch(err) {
+  }
+</script>
+EOT;
+
+  return $content;
+}
+
+function ca_interspire_sideblock_he() {
+
+  $content = <<<EOT
+<!--
+Do not modify the NAME value of any of the INPUT fields
+the FORM action, or any of the hidden fields (eg. input type=hidden).
+These are all required for this form to function correctly.
+-->
+<style type="text/css">
+#block-webform-client-block-68 {visibility:hidden;}
+.myForm td, input, select, textarea, checkbox  {
+      font-family: tahoma;
+      font-size: 12px;
+    }
+
+    .required {
+      color: black;
+    }</style>
+<div class="block block-webform" id="block-webform-client-block-interspire-heb">
+    <h2 class="block-title">לפרטים נוספים</h2>
+    <div class="content">
+    <form class="webform-client-form compact-form" action="http://news.concept-academy.co.il/form.php?form=24" id="frmSS24" method="post" onsubmit="return CheckForm24(this);"><input name="format" type="hidden" value="h">
+     <div>
+        <div id="webform-component-name" class="webform-component webform-component-textfield">
+          <div id="edit-submitted-name-wrapper" class="form-item compact-form-wrapper">
+            <label class="compact-form-label" for="CustomFields_2_24">שם  <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required compact-form-field" id="CustomFields_2_24" name="CustomFields[2]" size="25" type="text" value="" dir="rtl" onclick="setGFields(document.forms[0]);">
+          </div>
+        </div>
+        <div id="webform-component-email" class="webform-component webform-component-email">
+          <div id="edit-submitted-email-wrapper" class="form-item compact-form-wrapper">
+            <label class="compact-form-label" for="email">דוא"ל  <span class="form-required" title="This field is required.">*</span></label><input class="form-text required compact-form-field" name="email" id="email" size="25" type="text" value="" dir="rtl">
+          </div>
+        </div>
+        <div id="webform-component-phone" class="webform-component webform-component-textfield">
+          <div id="edit-submitted-phone-wrapper" class="form-item compact-form-wrapper">
+            <label class="compact-form-label" for="CustomFields_5_24">טלפון   <span class="form-required" title="This field is required.">*</span></label><input class="form-text required compact-form-field" id="CustomFields_5_24" name="CustomFields[5]" size="25" type="text" value="" dir="rtl">
+          </div>
+        </div>
+        <div id="webform-component-course" class="webform-component webform-component-select">
+          <div id="edit-submitted-course-wrapper" class="form-item">
+            <label for="CustomFields_13_24">מעניין אותי ללמוד: <span class="form-required" title="This field is required.">*</span></label>
+            <select name="CustomFields[13]" class="form-select required" id="CustomFields_13_24" style="width:150px" >
+            <option value="" selected="selected">בחר...</option>
+            <option value="mehina">מכינה לעיצוב</option>
+            <option value="interior">עיצוב פנים</option>
+            <option value="home-styling">הום סטיילינג</option>
+            <option value="event-design">עיצוב והפקת אירועים</option>
+            <option value="fashion">עיצוב אופנה</option>
+            <option value="window-dressing">עיצוב חלונות ראווה</option>
+            <option value="graphic_design">עיצוב גרפי-תקשורת חזותית</option>
+            <option value="web">עיצוב אתרי אינטרנט</option>
+            <option value="styling">סטיילינג</option>
+            <option value="sewing">קורס תפירה</option>
+            <option value="industrial">עיצוב תעשייתי</option>
+            <option value="couture">עיצוב שמלות כלה וערב</option>
+            <option value="flowers">שזירת פרחים</option>
+            </select>
+          </div>
+        </div>
+          <div><!-- sourceURL:  -->
+            <input id="CustomFields_26_24" name="CustomFields[26]" type="hidden" value="">
+          </div>
+          <div><!-- source: -->
+            <input id="CustomFields_19_24" name="CustomFields[19]" type="hidden" value="">
+          </div>
+       <div><!-- term: -->
+            <input id="CustomFields_21_24" name="CustomFields[21]" type="hidden" value="">
+          </div>
+       <div><!-- content: -->
+            <input id="CustomFields_22_24" name="CustomFields[22]" type="hidden" value="">
+          </div>
+       <div><!-- campaign: -->
+            <input id="CustomFields_23_24" name="CustomFields[23]" type="hidden" value="">
+          </div>
+       <div><!-- csegment: -->
+            <input id="CustomFields_24_24" name="CustomFields[24]" type="hidden" value="">
+          </div>
+       <div><!-- nvisits: -->
+            <input id="CustomFields_25_24" name="CustomFields[25]" type="hidden" value="">
+          </div>
+          <div class="form-item" id="edit-submitted-terms-1-wrapper">
+            <label class="option" for="edit-submitted-terms-1"><input type="checkbox" name="submitted[terms][accept]" id="edit-submitted-terms-1" value="accept" checked="checked" class="form-checkbox"> אישור לקבלת מידע</label>
+          </div>
+          <div id="edit-actions" class="form-actions form-wrapper">
+            <input id="edit-submit" class="form-submit" type="submit" value="שלח"><br>
+          </div>
+        </div>
+    </form>
+</div>
+</div>
+<script type="text/javascript">
+// <![CDATA[
+$(document).ready(function() {
+   // put all your jQuery goodness in here.
+   //alert("xxx");
+   setGFields(0);
+ });
+        function CheckMultiple24(frm, name) {
+          for (var i=0; i<frm.length; i++)
+          {
+            fldObj = frm.elements[i];
+            fldId = fldObj.id;
+            if (fldId) {
+              var fieldnamecheck=fldObj.id.indexOf(name);
+              if (fieldnamecheck != -1) {
+                if (fldObj.checked) {
+                  return true;
+                }
+              }
+            }
+          }
+          return false;
+        }
+      function CheckForm24(f) {
+        setGFields(document.forms[0]);
+
+        var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+        if (!email_re.test(f.email.value)) {
+          alert("Please enter your email address.");
+          f.email.focus();
+          return false;
+        }
+
+        var fname = "CustomFields_2_24";
+        var fld = document.getElementById(fname);
+        if (fld.value == "") {
+          alert("Please enter a value for field First Name");
+          fld.focus();
+          return false;
+        }
+
+        var fname = "CustomFields_18_24";
+        var fld = document.getElementById(fname);
+          if (fld.value == "") {
+            alert("Please enter a value for field Mobile phone");
+            fld.focus();
+            return false;
+          }
+
+        CheckNum = parseInt(fld.value);
+        if (fld.value != "" && isNaN(CheckNum)) {
+          alert("Please enter a numeric value for field Mobile phone");
+          fld.select();
+          fld.focus();
+          return false;
+        }
+
+        var fname = "CustomFields_13_24";
+        var fld = document.getElementById(fname);
+        if (fld.value == "") {
+          alert("Please enter a value for field Subject / Area of Interest");
+          fld.focus();
+          return false;
+        }
+
+          return true;
+        }
+
+// ]]>
+</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+  var pageTracker = _gat._createTracker("UA-6240543-1");
+  pageTracker._trackPageview();
+
+  function init_google() {
+    var pattern = /google\./i;
+    if (pattern.exec(document.referrer) != null) {
+      var url_parts = document.referrer.split('?');
+      if (url_parts[1]) {
+        var url_args = url_parts[1].split('&');
+        for(var i=0; i<url_args.length; i++) {
+          var keyval = url_args[i].split('=');
+          if (keyval[0] == 'q') {
+            return _utf8_decode(decode_url(keyval[1])); //decode_url(keyval[1]);
+          }
+        }
+      }
+    }
+  }
+
+  // private method for UTF-8 decoding
+  function _utf8_decode(utftext) {
+    var string = "";
+    var i = 0;
+    var c = c1 = c2 = 0;
+     while (i<utftext.length) {
+      c = utftext.charCodeAt(i);
+      if (c<128) {
+        string += String.fromCharCode(c);
+        i++;
+      }
+      else if ((c>191) && (c<224)) {
+        c2 = utftext.charCodeAt(i+1);
+        string += String.fromCharCode(((c & 31)<<6) | (c2 & 63));
+        i += 2;
+      }
+      else {
+        c2 = utftext.charCodeAt(i+1);
+        c3 = utftext.charCodeAt(i+2);
+        string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+        i += 3;
+      }
+    }
+    return string;
+  }
+
+  function decode_url(url) {
+    return unescape(url.replace(/\+/g,' '));
+  }
+
+  function go_google(terms) {
+    terms = terms.replace(/\"/g,"");
+    return terms;
+  }
+
+  function _uGC(l,n,s) {
+    if (!l || l=="" || !n || n=="" || !s || s=="") return "-";
+    var i,i2,i3,c="-";
+    i=l.indexOf(n);
+    i3=n.indexOf("=")+1;
+    if (i > -1) {
+     i2=l.indexOf(s,i); if (i2 < 0) { i2=l.length; }
+     c=l.substring((i+i3),i2);
+    }
+    return c;
+  }
+
+  //
+  var z = _uGC(document.cookie, '__utmz=', ';');
+  //
+  var source  = _uGC(z, 'utmcsr=', '|');
+  var medium  = _uGC(z, 'utmcmd=', '|');
+  var term  = _uGC(z, 'utmctr=', '|');
+  var content = _uGC(z, 'utmcct=', '|');
+  var campaign = _uGC(z, 'utmccn=', '|');
+  var gclid   = _uGC(z, 'utmgclid=', '|');
+  //
+  if (gclid !="-") {
+    source = 'google';
+    medium = 'cpc';
+  }
+
+  var csegment = _uGC(document.cookie, '__utmv=', ';');
+  if (csegment != '-') {
+    var csegmentex = /[1-9]*?\.(.*)/;
+    csegment  = csegment.match(csegmentex);
+    csegment  = csegment[1];
+  }
+  else {
+    csegment = '(not set)';
+  }
+
+  //
+  var a = _uGC(document.cookie, '__utma=', ';');
+  var aParts = a.split(".");
+  var nVisits = aParts[5];
+
+  function setGFields(f) {
+    //alert('yey');
+    term = term.replace(/%20/g, ' ');
+    try {
+      document.getElementById('CustomFields_19_24').value  = source;
+      document.getElementById('CustomFields_26_24').value  = document.URL;
+      document.getElementById('CustomFields_21_24').value  = term + ' | ' + init_google() + '>>' + _utf8_decode(decode_url(term));
+      document.getElementById('CustomFields_22_24').value = content;
+      document.getElementById('CustomFields_23_24').value = campaign;
+      document.getElementById('CustomFields_24_24').value = csegment;
+      document.getElementById('CustomFields_25_24').value = nVisits;
+    }
+    catch(err) { }
+
+    return true;
+  }
+} catch(err) {}
+</script>
+EOT;
+
+  return $content;
 }
 
 /**
