@@ -709,6 +709,20 @@ EOT;
 }
 
 /**
+ * Implementation of hook_preprocess_HOOK().
+ *
+ * It includes the contact_us_checkform.js to the /contact-us page
+ *
+ * @param array $vars
+ *   The page variables
+ */
+function helper_functions_preprocess_page(&$vars) {
+  if (request_uri() == '/contact-us') {
+    drupal_add_js(drupal_get_path('module', 'helper_functions') . '/contact_us_checkform.js');
+  }
+}
+
+/**
  * Implementation of hook_form_alter().
  */
 /*
