@@ -74,7 +74,7 @@ function CheckForm16(f) {
 
   setGFields();
 
-  return false;
+  return true;
 }
 
 /**
