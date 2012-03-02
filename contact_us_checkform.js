@@ -1,8 +1,3 @@
-/**
- * @file
- * This file is used by the /contact-us page.
- */
-
 function CheckMultiple16(frm, name) {
   for (var i=0; i < frm.length; i++) {
     fldObj = frm.elements[i];
@@ -19,13 +14,6 @@ function CheckMultiple16(frm, name) {
   return false;
 }
 
-/**
- * Checks the form16
- *
- * @param f
- *
- * @returns {Boolean}
- */
 function CheckForm16(f) {
   var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
   if (!email_re.test(f.email.value)) {
@@ -64,7 +52,7 @@ function CheckForm16(f) {
     return false;
   }
 
-  var fname = "CustomFields_22_16";
+  var fname = "CustomFields_33_16";
   var fld = document.getElementById(fname);
   if (fld.value == "") {
     alert("חובה למלא את השדה מסר.");
@@ -77,19 +65,6 @@ function CheckForm16(f) {
   return true;
 }
 
-/**
- * Extracts value from cookie
- *
- * @param text
- *   The full text of cookie
- * @param name
- *   The variable name
- * @param separator
- *   The separator or values
- *
- * @returns {String}
- *   The value of the variable
- */
 function _uGC(text, name, separator) {
   if (!text || text=="" || !name || name=="" || !separator || separator=="") {
     return '-';
@@ -107,9 +82,6 @@ function _uGC(text, name, separator) {
   return c;
 }
 
-/**
- * Set the Google Analitics fields of the form
- */
 function setGFields() {
   //
   var z = _uGC(document.cookie, '__utmz=', ';');
