@@ -57,7 +57,7 @@ function CheckForm16(f) {
   if (fld.value == "") {
     alert("חובה למלא את השדה מסר.");
     fld.focus();
-    false;
+    return false;
   }
 
   setGFields();
