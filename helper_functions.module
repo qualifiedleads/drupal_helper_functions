@@ -171,8 +171,8 @@ function ca_interspire_sideblock_en() {
 }
 </style>
 <div class="block block-webform" id="block-webform-client-block-interspire">
-    <h2 class="block-title">Course signup</h2>
-    <div class="content">
+  <h2 class="block-title">Course signup</h2>
+  <div class="content">
     <form class="webform-client-form compact-form" action="http://news.concept-academy.co.il/form.php?form=24" id="frmSS24" method="post" onsubmit="return CheckForm24(this);"><input name="format" type="hidden" value="h">
         <div>
             <div id="webform-component-name" class="webform-component webform-component-textfield">
@@ -193,7 +193,14 @@ function ca_interspire_sideblock_en() {
             <div id="webform-component-course" class="webform-component webform-component-select">
                 <div id="edit-submitted-course-wrapper" class="form-item">
                     <label for="CustomFields_13_24">Course: <span class="form-required" title="This field is required.">*</span></label>
-                    <select name="CustomFields[13]" class="form-select required" id="CustomFields_13_24"><option value="" selected="selected">select...</option><option value="graphic_design">Graphic design</option><option value="hair_dressing">Hair dressing</option><option value="makeup">Makeup</option><option value="photography">Photography</option><option value="interior_design">Interior Design</option></select>
+                    <select name="CustomFields[13]" class="form-select required" id="CustomFields_13_24">
+                      <option value="" selected="selected">select...</option>
+                      <option value="graphic_design">Graphic design</option>
+                      <option value="hair_dressing">Hair dressing</option>
+                      <option value="makeup">Makeup</option>
+                      <option value="photography">Photography</option>
+                      <option value="interior_design">Interior Design</option>
+                    </select>
                 </div>
             </div>
                 <div><!-- sourceURL:  -->
@@ -202,19 +209,19 @@ function ca_interspire_sideblock_en() {
                 <div><!-- source: -->
                     <input id="CustomFields_19_24" name="CustomFields[19]" type="hidden" value="">
                 </div>
-             <div><!-- term: -->
+                <div><!-- term: -->
                     <input id="CustomFields_21_24" name="CustomFields[21]" type="hidden" value="">
                 </div>
-             <div><!-- content: -->
+                <div><!-- content: -->
                     <input id="CustomFields_22_24" name="CustomFields[22]" type="hidden" value="">
                 </div>
-             <div><!-- campaign: -->
+                <div><!-- campaign: -->
                     <input id="CustomFields_23_24" name="CustomFields[23]" type="hidden" value="">
                 </div>
-             <div><!-- csegment: -->
+                <div><!-- csegment: -->
                     <input id="CustomFields_24_24" name="CustomFields[24]" type="hidden" value="">
                 </div>
-             <div><!-- nvisits: -->
+                <div><!-- nvisits: -->
                     <input id="CustomFields_25_24" name="CustomFields[25]" type="hidden" value="">
                 </div>
                 <div class="form-item" id="edit-submitted-terms-1-wrapper">
@@ -225,7 +232,7 @@ function ca_interspire_sideblock_en() {
                 </div>
             </div>
     </form>
-</div>
+  </div>
 </div>
 <script type="text/javascript">
 // <![CDATA[
@@ -465,20 +472,26 @@ These are all required for this form to function correctly.
           <div id="edit-submitted-course-wrapper" class="form-item">
             <label for="CustomFields_13_24">מעניין אותי ללמוד: <span class="form-required" title="This field is required.">*</span></label>
             <select name="CustomFields[13]" class="form-select required" id="CustomFields_13_24" style="width:150px" >
-            <option value="" selected="selected">בחר...</option>
-            <option value="mehina">מכינה לעיצוב</option>
-            <option value="interior">עיצוב פנים</option>
-            <option value="home-styling">הום סטיילינג</option>
-            <option value="event-design">עיצוב והפקת אירועים</option>
-            <option value="fashion">עיצוב אופנה</option>
-            <option value="window-dressing">עיצוב חלונות ראווה</option>
-            <option value="graphic_design">עיצוב גרפי-תקשורת חזותית</option>
-            <option value="web">עיצוב אתרי אינטרנט</option>
-            <option value="styling">סטיילינג</option>
-            <option value="sewing">קורס תפירה</option>
-            <option value="industrial">עיצוב תעשייתי</option>
-            <option value="couture">עיצוב שמלות כלה וערב</option>
-            <option value="flowers">שזירת פרחים</option>
+              <option value="" selected="selected">בחר...</option>
+              <option value="מכינה">מכינה לעיצוב</option>
+              <option value="עיצוב פנים">עיצוב פנים</option>
+              <option value="הום סטיילינג">הום סטיילינג</option>
+              <option value="הפקת אירועים">עיצוב והפקת אירועים</option>
+              <option value="עיצוב אופנה">עיצוב אופנה</option>
+              <option value="חלונות ראווה">עיצוב חלונות ראווה</option>
+              <option value="עיצוב גרפי">עיצוב גרפי-תקשורת חזותית</option>
+              <option value="עיצוב אתרי אינטרנט">עיצוב אתרי אינטרנט</option>
+              <option value="סטיילינג">סטיילינג</option>
+              <option value="קורס תפירה">קורס תפירה</option>
+              <option value="עיצוב תעשייתי">עיצוב תעשייתי</option>
+              <option value="שמלות כלה">עיצוב שמלות כלה וערב</option>
+              <option value="שזירת פרחים">שזירת פרחים</option>
+              <option value="דיווח על טעות בידיעה או כתבה">דיווח על טעות בידיעה או כתבה</option>
+              <option value="הצעה לשיתוף פעולה - שיווק, פרסום או יח">הצעה לשיתוף פעולה - שיווק, פרסום או יח"צ</option>
+              <option value="הנהח וכספים">הנה"ח וכספים</option>
+              <option value="אני סטודנט המעוניין לפנות לדיקנית בנושא אישי">אני סטודנט המעוניין לפנות לדיקנית בנושא אישי</option>
+              <option value="פניה למנהל אתר">פניה למנהל אתר</option>
+              <option value="התעניינות במישרה פנויה">התעניינות במישרה פנויה</option>
             </select>
           </div>
         </div>
