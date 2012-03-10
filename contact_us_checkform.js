@@ -83,16 +83,13 @@ function _uGC(text, name, separator) {
 }
 
 function setGFields() {
-  //
   var z = _uGC(document.cookie, '__utmz=', ';');
-  //
   var source   = _uGC(z, 'utmcsr=', '|');
   var medium   = _uGC(z, 'utmcmd=', '|');
-  var term     = _uGC(z, 'utmctr=', '|');
+  var term     = _uGC(z, 'utmctr=', '|').replace(/%20/g, ' ');
   var content  = _uGC(z, 'utmcct=', '|');
   var campaign = _uGC(z, 'utmccn=', '|');
   var gclid    = _uGC(z, 'utmgclid=', '|');
-  //
   if (gclid !="-") {
     source = 'google';
     medium = 'cpc';
@@ -104,25 +101,21 @@ function setGFields() {
     csegment = csegment.match(csegmentex);
     csegment = csegment[1];
   }
-  else { 
+  else {
     csegment = '(not set)';
   }
 
-  //
   var a = _uGC(document.cookie, '__utma=', ';');
   var aParts = a.split(".");
   var nVisits = aParts[5];
 
-  try {
-    $('#CustomFields_19_16').val(source);
-    $('#CustomFields_20_16').val(medium);
-    $('#CustomFields_21_16').val(term);
-    $('#CustomFields_22_16').val(content);
-    $('#CustomFields_23_16').val(campaign);
-    $('#CustomFields_24_16').val(csegment);
-    $('#CustomFields_25_16').val(nVisits);
-  }
-  catch(err) { }
+  $('#CustomFields_19_16').val(source);
+  $('#CustomFields_20_16').val(medium);
+  $('#CustomFields_21_16').val(term);
+  $('#CustomFields_22_16').val(content);
+  $('#CustomFields_23_16').val(campaign);
+  $('#CustomFields_24_16').val(csegment);
+  $('#CustomFields_25_16').val(nVisits);
 
   return true;
 }

@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#block-webform-client-block-68 {
+  visibility:hidden;
+}
+
+.myForm td, input, select, textarea, checkbox  {
+  font-family: tahoma;
+  font-size: 12px;
+}
+
+.required {
+  color: black;
+}
