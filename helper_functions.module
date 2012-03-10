@@ -155,6 +155,8 @@ function page_teacher_sideblock() {
 }
 
 function ca_interspire_sideblock_en() {
+  $is_course = helper_functions_is_course();
+
   $content = <<<EOT
 <style type="text/css">
 #block-webform-client-block-6 {
@@ -433,6 +435,7 @@ function ca_interspire_sideblock_he() {
   $path = drupal_get_path('module', 'helper_functions');
   drupal_add_js($path . '/ca_interspire_sideblock_he.js');
   drupal_add_css($path . '/ca_interspire_sideblock_he.css');
+  $is_course = helper_functions_is_course();
 
   $content = <<<EOT
 <!--
@@ -527,6 +530,24 @@ EOT;
   return $content;
 }
 
+/**
+ * Detects whether the given page is a course node, or not.
+ *
+ * @return (boolean)
+ *   TRUE is a page is a course node, FALSE otherwise
+ */
+function helper_functions_is_course() {
+  $is_course = FALSE;
+
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $node = node_load(arg(1));
+    if ($node->type == 'course') {
+      $is_course = TRUE;
+    }
+  }
+
+  return $is_course;
+}
 /**
  * Implementation of hook_preprocess_HOOK().
  *
