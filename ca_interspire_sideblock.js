@@ -21,7 +21,7 @@ function CheckMultiple24(frm, name) {
 }
 
 function CheckForm24(f) {
-  setGFields(f);
+  setGFields(document.forms[0]);
 
   var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
   if (!email_re.test(f.email.value)) {
@@ -54,12 +54,17 @@ function CheckForm24(f) {
     return false;
   }
 
-  var fname = "CustomFields_13_24";
-  var fld = document.getElementById(fname);
-  if (fld.value == "") {
-    alert("Please enter a value for field Subject / Area of Interest");
-    fld.focus();
-    return false;
+  if (Drupal.settings.ca_interspire_sideblock.is_course) {
+    $('#CustomFields_13_24 option:selected').val(Drupal.settings.ca_interspire_sideblock.request_uri);
+  }
+  else {
+    var fname = "CustomFields_13_24";
+    var fld = document.getElementById(fname);
+    if (fld.value == "") {
+      alert("Please enter a value for field Subject / Area of Interest");
+      fld.focus();
+      return false;
+    }
   }
 
   return true;
@@ -71,7 +76,7 @@ function init_google() {
     var url_parts = document.referrer.split('?');
     if (url_parts[1]) {
       var url_args = url_parts[1].split('&');
-      for(var i=0; i<url_args.length; i++) {
+      for (var i=0; i<url_args.length; i++) {
         var keyval = url_args[i].split('=');
         if (keyval[0] == 'q') {
           return _utf8_decode(decode_url(keyval[1])); //decode_url(keyval[1]);
@@ -79,6 +84,7 @@ function init_google() {
       }
     }
   }
+  return '';
 }
 
 // private method for UTF-8 decoding
@@ -86,8 +92,9 @@ function _utf8_decode(utftext) {
   var string = "";
   var i = 0;
   var c = c1 = c2 = 0;
-  while (i<utftext.length) {
+  while (i < utftext.length) {
     c = utftext.charCodeAt(i);
+
     if (c<128) {
       string += String.fromCharCode(c);
       i++;
@@ -104,6 +111,7 @@ function _utf8_decode(utftext) {
       i += 3;
     }
   }
+
   return string;
 }
 
@@ -117,14 +125,21 @@ function go_google(terms) {
 }
 
 function _uGC(l,n,s) {
-  if (!l || l=="" || !n || n=="" || !s || s=="") return "-";
-  var i,i2,i3,c="-";
-  i=l.indexOf(n);
-  i3=n.indexOf("=")+1;
-  if (i > -1) {
-   i2=l.indexOf(s,i); if (i2 < 0) { i2=l.length; }
-   c=l.substring((i+i3),i2);
+  if (!l || l=="" || !n || n=="" || !s || s=="") {
+    return "-";
   }
+
+  var i, i2, i3, c = "-";
+  i = l.indexOf(n);
+  i3 = n.indexOf("=") + 1;
+  if (i > -1) {
+    i2 = l.indexOf(s, i);
+    if (i2 < 0) {
+      i2 = l.length;
+    }
+    c = l.substring((i+i3), i2);
+  }
+
   return c;
 }
 
@@ -161,7 +176,7 @@ function setGFields(f) {
   $('#CustomFields_23_24').val(campaign);
   $('#CustomFields_24_24').val(csegment);
   $('#CustomFields_25_24').val(nVisits);
-  $('#CustomFields_26_24').val(document.URL);
+  $('#CustomFields_26_24').val(decodeURI(document.URL));
 
   return true;
 }
