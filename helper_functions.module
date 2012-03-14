@@ -248,12 +248,12 @@ function ca_interspire_sideblock_he() {
   drupal_add_css($path . '/ca_interspire_sideblock.css');
   $is_course = helper_functions_is_course();
   if ($is_course) {
-    drupal_add_css($path . '/ca_interspire_sideblock_he_hidedropdown.css');
+    drupal_add_css($path . '/ca_interspire_sideblock_hidedropdown.css');
     $request_uri = urldecode(drupal_substr(request_uri(), 1));
     drupal_add_js(array('ca_interspire_sideblock' => array('request_uri' => $request_uri)), 'setting');
   }
   drupal_add_js(array('ca_interspire_sideblock' => array('is_course' => $is_course)), 'setting');
-  
+
   $content = <<<EOT
 <!--
 Do not modify the NAME value of any of the INPUT fields
