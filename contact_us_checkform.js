@@ -55,7 +55,7 @@ function CheckForm16(f) {
   var fname = "CustomFields_33_16";
   var fld = document.getElementById(fname);
   if (fld.value == "") {
-    alert("חובה למלא את השדה מסר.");
+    alert("Please enter a value for field Message");
     fld.focus();
     return false;
   }
