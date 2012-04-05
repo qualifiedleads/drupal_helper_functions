@@ -25,7 +25,7 @@ function CheckForm24(f) {
 
   var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
   if (!email_re.test(f.email.value)) {
-    alert("Please enter your email address.");
+    alert('הכנס את כתובת הדוא"ל שלך');
     f.email.focus();
     return false;
   }
@@ -33,7 +33,7 @@ function CheckForm24(f) {
   var fname = "CustomFields_2_24";
   var fld = document.getElementById(fname);
   if (fld.value == "") {
-    alert("Please enter a value for field First Name");
+    alert("הכנס את שמך הפרטי");
     fld.focus();
     return false;
   }
@@ -61,7 +61,7 @@ function CheckForm24(f) {
     var fname = "CustomFields_13_24";
     var fld = document.getElementById(fname);
     if (fld.value == "") {
-      alert("Please enter a value for field Subject / Area of Interest");
+      alert("שלך בעיצוב בחר את תחום העניין");
       fld.focus();
       return false;
     }

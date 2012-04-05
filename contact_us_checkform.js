@@ -31,7 +31,7 @@ function CheckForm16(f) {
   var fname = "CustomFields_2_16";
   var fld = document.getElementById(fname);
   if (fld.value == "") {
-    alert("Please enter a value for field First Name");
+    alert("הכנס את שמך הפרטי");
     fld.focus();
     return false;
   }
@@ -39,7 +39,7 @@ function CheckForm16(f) {
   var fname = "CustomFields_13_16";
   var fld = document.getElementById(fname);
   if (fld.value == "") {
-    alert("Please enter a value for field Subject / Area of Interest");
+    alert("שלך בעיצוב בחר את תחום העניין");
     fld.focus();
     return false;
   }
@@ -55,7 +55,7 @@ function CheckForm16(f) {
   var fname = "CustomFields_33_16";
   var fld = document.getElementById(fname);
   if (fld.value == "") {
-    alert("Please enter a value for field Message");
+    alert("אנא כתוב לנו הודעה:");
     fld.focus();
     return false;
   }
