@@ -73,10 +73,10 @@ function CheckForm24(f) {
 function init_google() {
   var pattern = /google\./i;
   if (pattern.exec(document.referrer) != null) {
-    var url_parts = document.referrer.split('?');
+    var url_parts = document.referrer.split('?'); // URL query
     if (url_parts[1]) {
       var url_args = url_parts[1].split('&');
-      for (var i=0; i<url_args.length; i++) {
+      for (var i = 0; i < url_args.length; i++) {
         var keyval = url_args[i].split('=');
         if (keyval[0] == 'q') {
           return _utf8_decode(decode_url(keyval[1])); //decode_url(keyval[1]);
@@ -95,18 +95,18 @@ function _utf8_decode(utftext) {
   while (i < utftext.length) {
     c = utftext.charCodeAt(i);
 
-    if (c<128) {
+    if (c < 128) {
       string += String.fromCharCode(c);
       i++;
     }
-    else if ((c>191) && (c<224)) {
-      c2 = utftext.charCodeAt(i+1);
-      string += String.fromCharCode(((c & 31)<<6) | (c2 & 63));
+    else if ((c > 191) && (c < 224)) {
+      c2 = utftext.charCodeAt(i + 1);
+      string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
       i += 2;
     }
     else {
-      c2 = utftext.charCodeAt(i+1);
-      c3 = utftext.charCodeAt(i+2);
+      c2 = utftext.charCodeAt(i + 1);
+      c3 = utftext.charCodeAt(i + 2);
       string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
       i += 3;
     }
@@ -171,7 +171,7 @@ function setGFields(f) {
   var nVisits = aParts[5];
 
   $('#CustomFields_19_24').val(source);
-  $('#CustomFields_21_24').val(term + ' | ' + init_google() + '>>' + _utf8_decode(decode_url(term)));
+  $('#CustomFields_21_24').val(init_google() + ' >> ' + _utf8_decode(decode_url(term)));
   $('#CustomFields_22_24').val(content);
   $('#CustomFields_23_24').val(campaign);
   $('#CustomFields_24_24').val(csegment);
