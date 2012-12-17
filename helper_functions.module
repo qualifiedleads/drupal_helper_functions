@@ -407,3 +407,10 @@ function mysite_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 */
+
+/**
+ * Implementation of hook_footer
+ */
+function helper_functions_footer($main = 0) {
+  return file_get_contents(drupal_get_path('module', 'helper_functions') . '/googletagmanager.html');
+}
