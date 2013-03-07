@@ -292,19 +292,12 @@ These are all required for this form to function correctly.
               <option value="הפקת אירועים">עיצוב והפקת אירועים</option>
               <option value="עיצוב אופנה">עיצוב אופנה</option>
               <option value="חלונות ראווה">עיצוב חלונות ראווה</option>
-              <option value="עיצוב גרפי">עיצוב גרפי-תקשורת חזותית</option>
-              <option value="עיצוב אתרי אינטרנט">עיצוב אתרי אינטרנט</option>
               <option value="סטיילינג">סטיילינג</option>
               <option value="קורס תפירה">קורס תפירה</option>
               <option value="עיצוב תעשייתי">עיצוב תעשייתי</option>
               <option value="שמלות כלה">עיצוב שמלות כלה וערב</option>
-              <option value="שזירת פרחים">שזירת פרחים</option>
-              <option value="דיווח על טעות בידיעה או כתבה">דיווח על טעות בידיעה או כתבה</option>
-              <option value="הצעה לשיתוף פעולה - שיווק, פרסום או יח">הצעה לשיתוף פעולה - שיווק, פרסום או יח"צ</option>
-              <option value="הנהח וכספים">הנה"ח וכספים</option>
-              <option value="אני סטודנט המעוניין לפנות לדיקנית בנושא אישי">אני סטודנט המעוניין לפנות לדיקנית בנושא אישי</option>
-              <option value="פניה למנהל אתר">פניה למנהל אתר</option>
-              <option value="התעניינות במישרה פנויה">התעניינות במישרה פנויה</option>
+              <option value="אילוסטרייטור">אילוסטרייטור ופוטושופ למעצבי אופנה</option>
+              <option value="תואר בעיצוב">תואר בעיצוב</option>
             </select>
           </div>
         </div>
